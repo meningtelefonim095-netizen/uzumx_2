@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "id": "uzumx",
+  "version": "1.0.0",
+  "name": "UzumX",
+  "description": "Neon-style client: HUD, zoom, fullbright, minimap, waypoints, ClickGUI.",
+  "environment": "client",
+  "entrypoints": { "client": ["uz.uzumx.UzumX"] },
+  "mixins": ["uzumx.mixins.json"],
+  "depends": { "fabricloader": ">=0.16.0", "minecraft": "~1.21.4", "java": ">=21", "fabric-api": "*" }
+}

@@ -1,0 +1,19 @@
+plugins { id 'fabric-loom' version '1.9-SNAPSHOT' }
+version = '1.0.0'
+base { archivesName = 'UzumX' }
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+}
+// Flat layout: all files live in the repository root
+sourceSets {
+    main {
+        java { srcDirs = ['.']; include '*.java' }
+        resources { srcDirs = ['.']; include 'fabric.mod.json', 'uzumx.mixins.json' }
+    }
+}
+processResources { from('en_us.json') { into 'assets/uzumx/lang' } }
+tasks.withType(JavaCompile).configureEach { options.release = 21 }
+java { sourceCompatibility = JavaVersion.VERSION_21; targetCompatibility = JavaVersion.VERSION_21 }
